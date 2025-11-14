@@ -21,7 +21,6 @@ class OnboardingViewBody extends StatelessWidget {
            DocLogo(),
             DocImageAndText(),
             TextAndBotton()
-
           ],
         ),
       ),

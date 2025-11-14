@@ -1,5 +1,6 @@
 import 'package:docdoc/core/utils/app_colors.dart';
 import 'package:docdoc/core/utils/font_styles.dart';
+import 'package:docdoc/features/auth/login/presentation/views/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -29,7 +30,9 @@ class TextAndBotton extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.r)),
             ),
           ),
-          onPressed: () {},
+          onPressed: () {
+Navigator.pushReplacementNamed(context, LoginView.routeName);
+          },
           child: Text(
             'Get Started',
             style: TextStyles.semiBold.copyWith(
