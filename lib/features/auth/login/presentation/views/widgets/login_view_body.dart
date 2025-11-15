@@ -34,18 +34,18 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               crossAxisAlignment: CrossAxisAlignment.center,
 
               children: [
-                SizedBox(height: 20.h),
+                SizedBox(height: 30.h),
                 AuthAppbar(
                   title: 'Welcome Back!',
                   subtitle:
                       "We're excited to have you back, can't wait to\n see what you've been up to since you last\n logged in.",
                 ),
-                SizedBox(height: 24.h),
+                SizedBox(height: 17.h),
                 CustomTextFormField(
                   hintText: 'Email',
                   textInputType: TextInputType.emailAddress,
                 ),
-                SizedBox(height: 16.h),
+                SizedBox(height: 12.h),
                 PasswordField(hintText: 'Password'),
                 SizedBox(height: 16.h),
                 CheckboxAndForgetPasswordWidget(),
@@ -58,12 +58,8 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   fontColor: AppColors.backgroundColor,
                 ),
                 SizedBox(height: 20.h),
-                OrDivider(),
-                SizedBox(height: 20.h),
-                SocialLoginBotton(onPressed: () {}),
-                SizedBox(height: 24.h),
                 TermsAndConditions(),
-                SizedBox(height: 24.h),
+                SizedBox(height: 20.h),
                 DontHaveAnAccountWidget(),
               ],
             ),

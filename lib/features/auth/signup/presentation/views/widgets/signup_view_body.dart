@@ -6,6 +6,7 @@ import 'package:docdoc/core/widgets/have_an_account.dart';
 import 'package:docdoc/core/widgets/or_divider.dart';
 import 'package:docdoc/core/widgets/social_login_botton.dart';
 import 'package:docdoc/core/widgets/terms_and_conditions.dart';
+import 'package:docdoc/features/auth/signup/presentation/views/widgets/gender_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,59 +18,65 @@ class SignupViewBody extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 24).w,
+          padding: EdgeInsets.symmetric(horizontal: 24).w,
 
-          child: Column(
-            children: [
-              SizedBox(height: 20.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(height: 30.h),
 
-              AuthAppbar(
-                title: 'Create Account',
-                subtitle:
-                    "Sign up now and start exploring all that our\n app has to offer. We're excited to welcome\n you to our community!",
-              ),
-              SizedBox(height: 12.h),
+                AuthAppbar(
+                  title: 'Create Account',
+                  subtitle:
+                      "Sign up now and start exploring all that our\n app has to offer. We're excited to welcome\n you to our community!",
+                ),
+                SizedBox(height: 17.h),
 
-              CustomTextFormField(
-                hintText: 'Email Address',
-                textInputType: TextInputType.emailAddress,
-              ),
-              SizedBox(height: 12.h),
-              CustomTextFormField(
-                textInputType: TextInputType.visiblePassword,
+                CustomTextFormField(
+                  hintText: 'Email Address',
+                  textInputType: TextInputType.emailAddress,
+                ),
+                SizedBox(height: 12.h),
+                CustomTextFormField(
+                  textInputType: TextInputType.visiblePassword,
 
-                hintText: 'Password',
-              ),
-              SizedBox(height: 12.h),
+                  hintText: 'Password',
+                ),
+                SizedBox(height: 12.h),
+                CustomTextFormField(
+                  textInputType: TextInputType.visiblePassword,
 
-              CustomTextFormField(
-                hintText: 'Confirm Password',
-                textInputType: TextInputType.visiblePassword,
-              ),
-              SizedBox(height: 12.h),
+                  hintText: 'Confirm Password',
+                ),
+                SizedBox(height: 12.h),
 
-              CustomTextFormField(
-                hintText: 'Phone Number',
-                textInputType: TextInputType.phone,
-              ),
-              SizedBox(height: 20.h),
 
-              CustomButton(
-                onPressed: () {},
-                text: 'Create Account',
-                color: AppColors.primaryColor,
-                colorSide: AppColors.primaryColor,
-                fontColor: AppColors.backgroundColor,
-              ),
-              SizedBox(height: 10.h),
-              OrDivider(),
-              SizedBox(height: 10.h),
-              SocialLoginBotton(onPressed: (){},),
-              SizedBox(height: 20.h),
-              TermsAndConditions(),
-              SizedBox(height: 20.h),
-              HaveAnAccountWidget()
-            ],
+                    CustomTextFormField(
+                      hintText: 'Phone Number',
+                      textInputType: TextInputType.phone,
+                    ),
+
+                SizedBox(height: 20.h),
+                GenderSelector(
+                  onGenderSelected: (value) {
+                    print("Selected gender: $value");
+                  },
+                ),
+                SizedBox(height: 20.h),
+
+                CustomButton(
+                  onPressed: () {},
+                  text: 'Create Account',
+                  color: AppColors.primaryColor,
+                  colorSide: AppColors.primaryColor,
+                  fontColor: AppColors.backgroundColor,
+                ),
+                SizedBox(height: 20.h),
+                TermsAndConditions(),
+                SizedBox(height: 20.h),
+                HaveAnAccountWidget(),
+              ],
+            ),
           ),
         ),
       ),
